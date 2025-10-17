@@ -1,0 +1,813 @@
+.dashboard-container {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.dashboard-header {
+  background-color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-header h1 {
+  color: #2c3e50;
+  margin: 0;
+}
+
+.logout-button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+  background-color: #c0392b;
+}
+
+.dashboard-tabs {
+  background-color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  gap: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.tab-button {
+  background: none;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  color: #7f8c8d;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 5px;
+}
+
+.tab-button:hover {
+  color: #2c3e50;
+  background-color: #f5f5f5;
+}
+
+.tab-button.active {
+  color: #3498db;
+  background-color: #ebf5fb;
+  font-weight: 600;
+}
+
+.dashboard-content {
+  padding: 2rem;
+}
+
+/* Appointments Section Styles */
+.appointments-section {
+  background-color: white;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.appointments-section h2 {
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+}
+
+.appointments-list {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.appointment-card {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e9ecef;
+}
+
+.appointment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.appointment-header h3 {
+  color: #2c3e50;
+  margin: 0;
+}
+
+.status {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.status.pending {
+  background-color: #fff3e0;
+  color: #ef6c00;
+}
+
+.status.accepted {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+.status.rejected {
+  background-color: #ffebee;
+  color: #c62828;
+}
+
+.appointment-details {
+  color: #546e7a;
+  margin-bottom: 1rem;
+}
+
+.appointment-details p {
+  margin: 0.5rem 0;
+}
+
+.appointment-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.accept-button,
+.reject-button,
+.create-prescription-button,
+.view-prescription-button,
+.edit-prescription-button,
+.delete-prescription-button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.accept-button {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.accept-button:hover {
+  background-color: #27ae60;
+}
+
+.reject-button {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.reject-button:hover {
+  background-color: #c0392b;
+}
+
+.create-prescription-button {
+  background-color: #3498db;
+  color: white;
+}
+
+.create-prescription-button:hover {
+  background-color: #2980b9;
+}
+
+.view-prescription-button {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.view-prescription-button:hover {
+  background-color: #27ae60;
+}
+
+.edit-prescription-button {
+  background-color: #f39c12;
+  color: white;
+}
+
+.edit-prescription-button:hover {
+  background-color: #d35400;
+}
+
+.delete-prescription-button {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.delete-prescription-button:hover {
+  background-color: #c0392b;
+}
+
+.error-message {
+  background-color: #ffebee;
+  color: #c62828;
+  padding: 1rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+/* Patients and Messages Sections */
+.patients-section, .messages-section {
+  background-color: white;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.patients-section h2, .messages-section h2 {
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .dashboard-header {
+    padding: 1rem;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .dashboard-tabs {
+    padding: 1rem;
+    flex-direction: column;
+  }
+
+  .dashboard-content {
+    padding: 1rem;
+  }
+
+  .appointment-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .appointment-actions {
+    flex-direction: column;
+  }
+
+  .accept-button, .reject-button {
+    width: 100%;
+  }
+}
+
+.dashboard-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: calc(100vh - 64px);
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+.dashboard-content {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 900px;
+}
+
+.dashboard-content h2 {
+  color: #333;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.specialization {
+  color: #4a90e2;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.dashboard-content p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.dashboard-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.feature-card {
+  background-color: #e6f0fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #cce0f2;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card h3 {
+  color: #4a90e2;
+  margin-bottom: 0.75rem;
+}
+
+.feature-card p {
+  color: #555;
+  font-size: 0.9rem;
+  margin-bottom: 0;
+}
+
+.prescription-button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.prescription-button:hover {
+  background-color: #43a047;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.loading,
+.no-appointments {
+  text-align: center;
+  padding: 2rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  margin: 1rem 0;
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.loading::after {
+  content: '';
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Management Dashboard Styles */
+.doctors-section {
+  background-color: white;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.section-header h2 {
+  color: #2c3e50;
+  margin: 0;
+}
+
+.add-button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-button:hover {
+  background-color: #2980b9;
+}
+
+.doctors-list {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  justify-items: center;
+}
+
+.doctors-section .doctor-card {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e9ecef;
+  max-width: 350px;
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+}
+
+.doctor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.doctor-header h3 {
+  color: #2c3e50;
+  margin: 0;
+}
+
+.delete-button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.delete-button:hover {
+  background-color: #c0392b;
+}
+
+.doctor-details {
+  color: #546e7a;
+}
+
+.doctor-details p {
+  margin: 0.5rem 0;
+}
+
+.doctor-form {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.doctor-form .form-group {
+  margin-bottom: 1rem;
+}
+
+.doctor-form .form-group:last-child {
+  grid-column: 1 / -1;
+}
+
+.close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #666;
+  cursor: pointer;
+  padding: 0.5rem;
+  line-height: 1;
+}
+
+.close-button:hover {
+  color: #333;
+}
+
+/* Emergency Dashboard Styles */
+.emergency-dashboard-container {
+  max-width: 700px;
+  margin: 2.5rem auto;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 16px rgba(229, 57, 53, 0.08);
+  padding: 2.5rem 2rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.emergency-title {
+  color: #e53935;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.first-aid-section {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+.first-aid-section h2 {
+  color: #b71c1c;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+.first-aid-list {
+  list-style: disc inside;
+  padding-left: 1rem;
+}
+.first-aid-item {
+  background: #fff3f3;
+  border-left: 4px solid #e53935;
+  border-radius: 8px;
+  margin-bottom: 0.8rem;
+  padding: 0.7rem 1rem;
+  color: #333;
+  font-size: 1.05rem;
+}
+.urgent-doctors-section {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+.urgent-doctors-section h2 {
+  color: #b71c1c;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+.doctor-cards {
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.doctor-card {
+  background: #f4f8fb;
+  border-radius: 12px;
+  box-shadow: 0 1px 6px rgba(74, 144, 226, 0.07);
+  padding: 1.2rem 1.2rem;
+  min-width: 200px;
+  max-width: 240px;
+  flex: 1 1 200px;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.doctor-icon {
+  font-size: 2.1rem;
+  margin-top: 0.2rem;
+}
+.back-home-link {
+  margin-top: 2rem;
+  width: 100%;
+  text-align: center;
+}
+@media (max-width: 700px) {
+  .emergency-dashboard-container {
+    padding: 1.2rem 0.5rem;
+  }
+  .doctor-cards {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+  }
+}
+
+.doctor-actions {
+  margin-top: 0.7rem;
+  display: flex;
+  gap: 0.5rem;
+}
+.chat-btn, .call-btn, .video-btn {
+  padding: 0.4rem 1rem;
+  border: none;
+  border-radius: 20px;
+  font-size: 0.98rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+.chat-btn {
+  background: #4a90e2;
+  color: #fff;
+}
+.chat-btn:hover {
+  background: #357ab8;
+}
+.call-btn {
+  background: #43a047;
+  color: #fff;
+}
+.call-btn:hover {
+  background: #2e7031;
+}
+.video-btn {
+  background: #e53935;
+  color: #fff;
+}
+.video-btn:hover {
+  background: #b71c1c;
+}
+
+/* Chat Modal Styles */
+.chat-modal {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.chat-modal-content {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 16px rgba(74, 144, 226, 0.18);
+  padding: 1.5rem 1.2rem;
+  width: 350px;
+  max-width: 95vw;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.close-chat {
+  position: absolute;
+  top: 10px;
+  right: 18px;
+  font-size: 1.5rem;
+  color: #e53935;
+  cursor: pointer;
+  font-weight: bold;
+}
+.chat-history {
+  min-height: 80px;
+  max-height: 180px;
+  overflow-y: auto;
+  margin-bottom: 1rem;
+  background: #f4f8fb;
+  border-radius: 8px;
+  padding: 0.7rem;
+}
+.chat-msg {
+  margin-bottom: 0.5rem;
+  font-size: 0.98rem;
+}
+.chat-msg.user {
+  color: #357ab8;
+  text-align: right;
+}
+.chat-msg.doctor {
+  color: #e53935;
+  text-align: left;
+}
+.chat-input-row {
+  display: flex;
+  gap: 0.5rem;
+}
+.chat-input {
+  flex: 1;
+  padding: 0.5rem 0.8rem;
+  border-radius: 20px;
+  border: 1px solid #bdbdbd;
+  font-size: 1rem;
+}
+.send-chat-btn {
+  background: #4a90e2;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 0.5rem 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.send-chat-btn:hover {
+  background: #357ab8;
+}
+
+.doctor-chat-container {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.chat-room-list {
+  min-width: 180px;
+  background: #f4f8fb;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 1px 6px rgba(74, 144, 226, 0.07);
+  height: 320px;
+  overflow-y: auto;
+}
+.chat-room-list h4 {
+  margin-bottom: 1rem;
+  color: #357ab8;
+  font-size: 1.1rem;
+}
+.chat-room-item {
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  background: #e6f0fa;
+  color: #357ab8;
+  font-weight: 500;
+  transition: background 0.2s, color 0.2s;
+}
+.chat-room-item.active, .chat-room-item:hover {
+  background: #357ab8;
+  color: #fff;
+}
+.chat-room-window {
+  flex: 1;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 1px 6px rgba(74, 144, 226, 0.07);
+  padding: 1rem 1.2rem;
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.chat-placeholder {
+  color: #aaa;
+  text-align: center;
+  margin-top: 4rem;
+  font-size: 1.1rem;
+}
+
+.summary-card {
+  background: var(--card-bg);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  padding: 24px 32px;
+  margin-bottom: 24px;
+  transition: transform 0.12s;
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 180px;
+  min-height: 120px;
+  text-align: center;
+}
+
+.summary-card h3 {
+  margin: 10px 0 0 0;
+  font-size: 2.2rem;
+  color: var(--primary-dark);
+  font-weight: 700;
+}
+
+.summary-card span {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 1.05rem;
+  font-weight: 500;
+  display: block;
+} 
